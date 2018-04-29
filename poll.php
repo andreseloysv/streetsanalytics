@@ -96,7 +96,7 @@ window.addEventListener("load", function () {
     var FD = new FormData(form);
     postData("save_poll.php", {form:form}).then( (response) => { 
         console.log(response);
-    });
+    }).catch(error => console.error(error));
   }
 
   const form = document.getElementById("poll");
