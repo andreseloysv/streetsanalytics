@@ -144,6 +144,7 @@ window.addEventListener("load", function () {
     console.log(questionList);
     postData("save_poll.php", {questionList:questionList,personDetails:personDetails}).then( (response) => {
         console.log(response);
+        location.reload();
     });
   }
 
