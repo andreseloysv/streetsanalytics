@@ -98,10 +98,11 @@ window.addEventListener("load", function () {
     const inputCheckboxs = document.querySelectorAll("input[type='checkbox']");
 
     for (let i = 0, len = inputCheckboxs.length; i < len; i++) {
+        //questionList.push(inputCheckboxs[i].value);
         if(inputCheckboxs[i].checked){
-            questionList.push(inputCheckboxs[i].value);
+            questionList[inputCheckboxs[i].value] = "true";
         }else{
-            questionList.push("");
+            questionList[inputCheckboxs[i].value] = "false";
         }
     }
     
