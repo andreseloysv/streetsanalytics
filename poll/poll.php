@@ -47,6 +47,35 @@ $conn->close();
 </head>
 
 <body>
+  
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>Login</h4>
+
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                    <label for="first_name">User Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+        </form>
+  </div>
+
+</div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Login</a>
+    </div>
+  </div>
+
 <div class="container">
 
 <h4 class="header">Streets Analytics Umfrage</h4>
@@ -73,6 +102,10 @@ $conn->close();
   </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 <script>
+
+const elem = document.querySelector('.modal');
+const instance = M.Modal.init(elem, options);
+
 function postData(url, data) {
   // Default options are marked with *
   return fetch(url, {
