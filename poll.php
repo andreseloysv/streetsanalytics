@@ -49,7 +49,8 @@ $conn->close();
 <body>
 <div class="container">
 
-<h3 class="header">Streets Analytics Umfrage</h3>
+<h4 class="header">Streets Analytics Umfrage</h4>
+<br>
 <form action="#">
 <?php
     foreach ($question_list as $question) {
@@ -63,6 +64,7 @@ $conn->close();
 <?php
     }
 ?>
+<br>
 <button class="btn waves-effect waves-light" type="submit" name="action">Speichern
     <i class="material-icons right">send</i>
   </button>
