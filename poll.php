@@ -51,7 +51,7 @@ $conn->close();
 
 <h4 class="header">Streets Analytics Umfrage</h4>
 <br>
-<form action="#">
+<form action="#" id="poll">
 <?php
     foreach ($question_list as $question) {
 ?> 
@@ -65,12 +65,32 @@ $conn->close();
     }
 ?>
 <br>
-<button class="btn waves-effect waves-light" type="submit" name="action">Speichern
+<button class="btn waves-effect waves-light blue lighten-2" type="submit" name="action">Speichern
     <i class="material-icons right">send</i>
   </button>
   </form>
   </div>
   </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script>
 
+window.addEventListener("load", function () {
+  function sendData() {
+    // Bind the FormData object and the form element
+    var FD = new FormData(form);
+    postData("save_poll.php", {form:form}).then( (response) => { 
+        console.log(response);
+    });
+  }
+
+  const form = document.getElementById("poll");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    console.log("sending data...");
+    sendData();
+  });
+});
+
+</script>
 </html>
