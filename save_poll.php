@@ -8,6 +8,7 @@ $db = substr($url["path"], 1);
 
 
 var_dump($_POST);
+echo("hola");
 exit();
 $questionList = preg_replace('/[^a-zA-Z0-9]/', '', $_POST["questionList"]);
 
