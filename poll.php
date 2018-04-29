@@ -104,9 +104,9 @@ window.addEventListener("load", function () {
     
     postData("save_poll.php", {questionList:JSON.stringify(questionList)}).then( (response) => { 
         console.log(response);
-    }).catch(error => console.error(error));
+    }).catch(error => console.log(error));
   }
-  
+
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     console.log("sending data...");
