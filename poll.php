@@ -42,11 +42,13 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Compiled and minified CSS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <title>Streets analytics</title>
 </head>
 
 <body>
+<h3 class="header">Streets Analytics Umfrage</h3>
 <form action="#">
 <?php
     foreach ($question_list as $question) {
