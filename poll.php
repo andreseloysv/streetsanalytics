@@ -27,7 +27,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        $question_list.push(new Question($row["id_question"], $row["question"]));
+        array_push($question_list,new Question($row["id_question"], $row["question"]));
     }
 } else {
     echo "0 results";
