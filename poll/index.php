@@ -121,7 +121,14 @@ window.addEventListener("load", function () {
   
   function sendData() {
     let questionList = [];
+    let personDetails = [];
     const inputCheckboxs = document.querySelectorAll("input[type='checkbox']");
+    const inputRadio = document.querySelectorAll("input[type='radio']:checked");
+
+    for (let i = 0, len = inputRadio.length; i < len; i++) {
+        personDetails.push(inputRadio[i].value);
+    }
+
     for (let i = 0, len = inputCheckboxs.length; i < len; i++) {
         let answer={};
         answer.id = inputCheckboxs[i].value;
@@ -135,7 +142,7 @@ window.addEventListener("load", function () {
     }
     
     console.log(questionList);
-    postData("save_poll.php", {questionList:questionList}).then( (response) => {
+    postData("save_poll.php", {questionList:questionList,personDetails:personDetails}).then( (response) => {
         console.log(response);
     });
   }
