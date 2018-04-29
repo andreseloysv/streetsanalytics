@@ -14,8 +14,13 @@ $questionList = $json_obj->questionList;
 $questionIdClear = [];
 $sql = "";
 var_dump($questionList);
+$id_respondent = 1;
 foreach($questionList as $question){
     $questionIdClear = preg_replace('/[^a-zA-Z0-9]/', '',$question);
+    $answer="yes";
+    if($questionIdClear == ""){
+        $answer="no";
+    }
     $sql = "INSERT INTO answer
     (answer,
     id_question,
