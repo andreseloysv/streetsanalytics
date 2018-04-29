@@ -23,7 +23,7 @@ foreach($questionList as $question){
     $questionAnswer = preg_replace('/[^a-zA-Z0-9]/', '',$question->text);
     $sql .= " INSERT INTO answer (answer, id_question, id_respondent, age, gender) VALUES ('$questionAnswer', $questionIdClear, $id_respondent, '$personAge', '$personGender'); ";
 }
-var_dump($sql);
+
 $conn = new mysqli($server, $username, $password, $db);
 // Check connection
 if ($conn->connect_error) {
