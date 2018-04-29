@@ -26,7 +26,7 @@ foreach($questionList as $question){
     id_question,
     id_respondent,)
     VALUES
-    ($answer,
+    ('$answer',
     $questionIdClear,
     $id_respondent);";
 }
