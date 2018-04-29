@@ -91,16 +91,22 @@ function postData(url, data) {
   .then(response => response.json()) // parses response to JSON
 }
 window.addEventListener("load", function () {
+  const form = document.getElementById("poll");
+  let questionList = [];
+  
   function sendData() {
-    // Bind the FormData object and the form element
-    var FD = new FormData(form);
-    postData("save_poll.php", {form:form}).then( (response) => { 
+    
+    const inputCheckboxs = document.querySelectorAll("input[type='checkbox']:checked");
+
+    for (let i = 0, len = inputCheckboxs.length; i < len; i++) {
+        questionList.push(inputCheckboxs[i].value;
+    }
+    
+    postData("save_poll.php", {questionList:JSON.stringify(questionList)}).then( (response) => { 
         console.log(response);
     }).catch(error => console.error(error));
   }
-
-  const form = document.getElementById("poll");
-
+  
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     console.log("sending data...");
