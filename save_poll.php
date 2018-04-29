@@ -6,9 +6,6 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);
 
-
-
-echo("hola");
 $json_str = file_get_contents('php://input');
 
 # Get as an object
@@ -16,6 +13,7 @@ $json_obj = json_decode($json_str);
 $questionList = $json_obj->questionList;
 $questionIdClear = [];
 $sql = "";
+var_dump($questionList);
 foreach($questionList as $question){
     $questionIdClear = preg_replace('/[^a-zA-Z0-9]/', '',$question);
     $sql = "INSERT INTO answer
