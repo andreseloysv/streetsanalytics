@@ -32,8 +32,8 @@ foreach($questionList as $question){
     ('$questionAnswer',
     $questionIdClear,
     $id_respondent,
-    $personAge,
-    $personGender);";
+    '$personAge',
+    '$personGender');";
 }
 
 $conn = new mysqli($server, $username, $password, $db);
