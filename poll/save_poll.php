@@ -9,6 +9,7 @@ $db = substr($url["path"], 1);
 $json_str = file_get_contents('php://input');
 $json_obj = json_decode($json_str);
 $questionList = $json_obj->questionList;
+var_dump(questionList);
 $questionIdClear = [];
 $sql = "";
 
