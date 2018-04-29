@@ -22,18 +22,7 @@ foreach($questionList as $question){
     $questionIdClear = preg_replace('/[^a-zA-Z0-9]/', '',$question->id);
     $questionAnswer = preg_replace('/[^a-zA-Z0-9]/', '',$question->text);
     var_dump($questionIdClear);
-    $sql .= " INSERT INTO answer
-    (answer,
-    id_question,
-    id_respondent,
-    age,
-    gender)
-    VALUES
-    ('$questionAnswer',
-    $questionIdClear,
-    $id_respondent,
-    '$personAge',
-    '$personGender'); ";
+    $sql .= " INSERT INTO answer (answer, id_question, id_respondent, age, gender) VALUES ('$questionAnswer', $questionIdClear, $id_respondent, '$personAge', '$personGender'); ";
 }
 
 $conn = new mysqli($server, $username, $password, $db);
