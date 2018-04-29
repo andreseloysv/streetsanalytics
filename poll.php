@@ -92,15 +92,19 @@ function postData(url, data) {
 }
 window.addEventListener("load", function () {
   const form = document.getElementById("poll");
-  let questionList = [];
   
   function sendData() {
-    
-    const inputCheckboxs = document.querySelectorAll("input[type='checkbox']:checked");
+    let questionList = [];
+    const inputCheckboxs = document.querySelectorAll("input[type='checkbox']");
 
     for (let i = 0, len = inputCheckboxs.length; i < len; i++) {
-        questionList.push(inputCheckboxs[i].value);
+        if(inputCheckboxs[i].checked){
+            questionList.push(inputCheckboxs[i].value);
+        }else{
+            questionList.push("");
+        }
     }
+    
     console.log(questionList);
     postData("save_poll.php", {questionList:questionList}).then( (response) => { 
         console.log(response);

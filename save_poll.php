@@ -13,13 +13,23 @@ $json_str = file_get_contents('php://input');
 
 # Get as an object
 $json_obj = json_decode($json_str);
-var_dump($json_obj->questionList);
-exit();
-$questionList = preg_replace('/[^a-zA-Z0-9]/', '', $_POST["questionList"]);
+$questionList = $json_obj->questionList;
+$questionIdClear = [];
+$sql = "";
+foreach($questionList as $question){
+    $questionIdClear = preg_replace('/[^a-zA-Z0-9]/', '',$question);
+    $sql = "INSERT INTO answer
+    (answer,
+    id_question,
+    id_respondent,)
+    VALUES
+    ($answer,
+    $questionIdClear,
+    $id_respondent);";
+}
 
-$answer = preg_replace('/[^a-zA-Z0-9]/', '', $_POST["answer"]);
-$question_id = preg_replace('/[^a-zA-Z0-9]/', '', $_POST["question_id"]);
-$id_respondent = preg_replace('/[^a-zA-Z0-9]/', '', $_POST["id_respondent"]);
+//exit();
+//$id_respondent = preg_replace('/[^a-zA-Z0-9]/', '', $_POST["id_respondent"]);
 
 $conn = new mysqli($server, $username, $password, $db);
 // Check connection
@@ -28,14 +38,8 @@ if ($conn->connect_error) {
 } 
 
 
-$sql = "INSERT INTO answer
-(answer,
-id_question,
-id_respondent,)
-VALUES
-($answer,
-$question_id,
-$id_respondent);";
+
+
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
