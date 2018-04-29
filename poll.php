@@ -25,3 +25,28 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <title>Streets analytics</title>
+</head>
+
+<body>
+<form action="#">
+    <p>
+      <label>
+        <input type="checkbox" />
+        <span>Red</span>
+      </label>
+    </p>
+  </form>
+  </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+</html>
