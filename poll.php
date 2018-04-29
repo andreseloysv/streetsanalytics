@@ -47,6 +47,8 @@ $conn->close();
 </head>
 
 <body>
+<div class="container">
+
 <h3 class="header">Streets Analytics Umfrage</h3>
 <form action="#">
 <?php
@@ -65,6 +67,7 @@ $conn->close();
     <i class="material-icons right">send</i>
   </button>
   </form>
+  </div>
   </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
