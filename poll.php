@@ -42,7 +42,6 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Compiled and minified CSS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <title>Streets analytics</title>
 </head>
@@ -62,8 +61,8 @@ $conn->close();
 <?php
     }
 ?>
-<button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">Speichern</i>
+<button class="btn waves-effect waves-light" type="submit" name="action">Speichern
+    <i class="material-icons right">send</i>
   </button>
   </form>
   </body>
