@@ -1,4 +1,14 @@
 <?php
+$question_list = [];
+class Question {
+    var $id;
+    var $text;
+    function __construct($id, $text="")
+   {
+       $this->id = $id;
+       $this->text = $text;
+   }
+}
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
 $server = $url["host"];
@@ -12,13 +22,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT * FROM encuesta";
+$sql = "SELECT * FROM encuesta as e, question as q where e.id=q.encuesta_id;";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"]. " - Autor: " . $row["autor"]. " " . $row["location"]. "<br>";
+        $question_list.push(new Question($row["id_question"], $row["question"]));
     }
 } else {
     echo "0 results";
@@ -39,12 +48,18 @@ $conn->close();
 
 <body>
 <form action="#">
+<?php
+    foreach ($question_list as $question) {
+?> 
     <p>
       <label>
-        <input type="checkbox" />
-        <span>Red</span>
+        <input type="checkbox" value="<?php echo($question->id); ?>"/>
+        <span><?php echo($question->text); ?></span>
       </label>
     </p>
+<?php
+    }
+?>
   </form>
   </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
