@@ -69,62 +69,59 @@ $conn->close();
             </div>
         </form>
   </div>
-
 </div>
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Login</a>
     </div>
   </div>
-
 <div class="container">
-
-<h4 class="header">Streets Analytics Umfrage</h4>
-<br>
-<form action="#" id="poll">
-<h5>Person</h5>
-<p>
-      <label>
-        <input class="with-gap" name="age" type="radio" checked />
-        <span>18 - 30</span>
-      </label>
-      <label>
-        <input class="with-gap" name="age" type="radio" />
-        <span>30 - 45</span>
-      </label>
-      <label>
-        <input class="with-gap" name="age" type="radio" />
-        <span>45 - 65</span>
-      </label>
-    </p>
-    <p>
-      <label>
-        <input class="with-gap" name="gender" type="radio" checked />
-        <span>Frau</span>
-      </label>
-      <label>
-        <input class="with-gap" name="gender" type="radio"  />
-        <span>Mann</span>
-      </label>
-    </p>
-<?php
-    foreach ($question_list as $question) {
-?> 
-    <p>
-      <label>
-        <input type="checkbox" value="<?php echo($question->id); ?>"/>
-        <span><?php echo($question->text); ?></span>
-      </label>
-    </p>
-<?php
-    }
-?>
-<br>
-<button class="btn waves-effect waves-light blue lighten-2" type="submit" name="action">Speichern
-    <i class="material-icons right">send</i>
-  </button>
-  </form>
+    <h4 class="header">Streets Analytics Umfrage</h4>
+    <br>
+    <form action="#" id="poll">
+        <h5>Person</h5>
+        <p>
+            <label>
+                <input class="with-gap" name="age" type="radio" checked value="18 - 30" />
+                <span>18 - 30</span>
+            </label>
+            <label>
+                <input class="with-gap" name="age" type="radio" value="30 - 45"/>
+                <span>30 - 45</span>
+            </label>
+            <label>
+                <input class="with-gap" name="age" type="radio" value="45 - 65"/>
+                <span>45 - 65</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input class="with-gap" name="gender" type="radio" value="frau" checked />
+                <span>Frau</span>
+            </label>
+            <label>
+                <input class="with-gap" name="gender" type="radio" value="mann" />
+                <span>Mann</span>
+            </label>
+        </p>
+        <?php
+            foreach ($question_list as $question) {
+        ?> 
+            <p>
+            <label>
+                <input type="checkbox" value="<?php echo($question->id); ?>"/>
+                <span><?php echo($question->text); ?></span>
+            </label>
+            </p>
+        <?php
+            }
+        ?>
+        <br>
+        <button class="btn waves-effect waves-light blue lighten-2" type="submit" name="action">Speichern
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
   </div>
-  </body>
+</body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 <script>
 
@@ -168,7 +165,6 @@ window.addEventListener("load", function () {
     
     console.log(questionList);
     postData("save_poll.php", {questionList:questionList}).then( (response) => {
-        M.toast({html: 'Info saved! Thank you!'})
         console.log(response);
     });
   }

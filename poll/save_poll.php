@@ -19,7 +19,9 @@ foreach($questionList as $question){
     $sql = "INSERT INTO answer
     (answer,
     id_question,
-    id_respondent)
+    id_respondent,
+    age,
+    gender)
     VALUES
     ('$questionAnswer',
     $questionIdClear,
