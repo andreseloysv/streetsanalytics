@@ -85,14 +85,17 @@ $conn->close();
 <p>
       <label>
         <input class="with-gap" name="age" type="radio" checked />
-        <span>Jung</span>
+        <span>18 - 30</span>
       </label>
       <label>
         <input class="with-gap" name="age" type="radio" />
-        <span>Alt</span>
+        <span>30 - 45</span>
+      </label>
+      <label>
+        <input class="with-gap" name="age" type="radio" />
+        <span>45 - 65</span>
       </label>
     </p>
-    <br>
     <p>
       <label>
         <input class="with-gap" name="gender" type="radio" checked />
