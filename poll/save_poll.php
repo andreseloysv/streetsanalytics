@@ -14,17 +14,16 @@ $personDetails = $json_obj->personDetails;
 $personAge = preg_replace('/[^a-zA-Z0-9]/', '',$personDetails[0]);
 $personGender = preg_replace('/[^a-zA-Z0-9]/', '',$personDetails[1]);
 
-$questionIdClear = [];
+$questionIdClear = "";
 $sql = "";
 
 $id_respondent = 1;
 foreach($questionList as $question){
     $questionIdClear = preg_replace('/[^a-zA-Z0-9]/', '',$question->id);
     $questionAnswer = preg_replace('/[^a-zA-Z0-9]/', '',$question->text);
-    var_dump($questionIdClear);
     $sql .= " INSERT INTO answer (answer, id_question, id_respondent, age, gender) VALUES ('$questionAnswer', $questionIdClear, $id_respondent, '$personAge', '$personGender'); ";
 }
-
+var_dump($sql);
 $conn = new mysqli($server, $username, $password, $db);
 // Check connection
 if ($conn->connect_error) {
