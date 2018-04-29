@@ -81,6 +81,30 @@ $conn->close();
 <h4 class="header">Streets Analytics Umfrage</h4>
 <br>
 <form action="#" id="poll">
+<p>Person</p>
+<p>
+      <label>
+        <input class="with-gap" name="age" type="radio" checked />
+        <span>Jung</span>
+      </label>
+      <label>
+        <input class="with-gap" name="age" type="radio" />
+        <span>Alt</span>
+      </label>
+    </p>
+    <br>
+    <p>
+      <label>
+        <input class="with-gap" name="gender" type="radio" checked />
+        <span>Frau</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input class="with-gap" name="gender" type="radio"  />
+        <span>Mann</span>
+      </label>
+    </p>
 <?php
     foreach ($question_list as $question) {
 ?> 
@@ -142,7 +166,8 @@ window.addEventListener("load", function () {
     }
     
     console.log(questionList);
-    postData("save_poll.php", {questionList:questionList}).then( (response) => { 
+    postData("save_poll.php", {questionList:questionList}).then( (response) => {
+        M.toast({html: 'Info saved! Thank you!'})
         console.log(response);
     });
   }
