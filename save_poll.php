@@ -13,7 +13,7 @@ $json_str = file_get_contents('php://input');
 
 # Get as an object
 $json_obj = json_decode($json_str);
-echo($json_obj->questionList);
+var_dump($json_obj->questionList);
 exit();
 $questionList = preg_replace('/[^a-zA-Z0-9]/', '', $_POST["questionList"]);
 
