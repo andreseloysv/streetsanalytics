@@ -97,7 +97,7 @@ window.addEventListener("load", function () {
     let questionList = [];
     const inputCheckboxs = document.querySelectorAll("input[type='checkbox']");
     for (let i = 0, len = inputCheckboxs.length; i < len; i++) {
-        let answer;
+        let answer={};
         answer.id = inputCheckboxs[i].value;
         if(inputCheckboxs[i].checked){
             answer.text = "true";
