@@ -88,7 +88,7 @@ function postData(url, data) {
     redirect: 'follow', // manual, *follow, error
     referrer: 'no-referrer', // *client, no-referrer
   })
-  .then(response => response.json()) // parses response to JSON
+  .then(response => response).catch(error => console.log(error)) // parses response to JSON
 }
 window.addEventListener("load", function () {
   const form = document.getElementById("poll");
@@ -99,12 +99,12 @@ window.addEventListener("load", function () {
     const inputCheckboxs = document.querySelectorAll("input[type='checkbox']:checked");
 
     for (let i = 0, len = inputCheckboxs.length; i < len; i++) {
-        questionList.push(inputCheckboxs[i].value;
+        questionList.push(inputCheckboxs[i].value);
     }
-    
-    postData("save_poll.php", {questionList:JSON.stringify(questionList)}).then( (response) => { 
+    console.log(questionList);
+    postData("save_poll.php", {questionList:questionList}).then( (response) => { 
         console.log(response);
-    }).catch(error => console.log(error));
+    });
   }
 
   form.addEventListener("submit", function (event) {
