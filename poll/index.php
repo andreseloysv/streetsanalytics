@@ -81,7 +81,7 @@ $conn->close();
 <h4 class="header">Streets Analytics Umfrage</h4>
 <br>
 <form action="#" id="poll">
-<p>Person</p>
+<h5>Person</h5>
 <p>
       <label>
         <input class="with-gap" name="age" type="radio" checked />
@@ -98,8 +98,6 @@ $conn->close();
         <input class="with-gap" name="gender" type="radio" checked />
         <span>Frau</span>
       </label>
-    </p>
-    <p>
       <label>
         <input class="with-gap" name="gender" type="radio"  />
         <span>Mann</span>
