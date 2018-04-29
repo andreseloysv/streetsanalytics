@@ -7,8 +7,13 @@ $password = $url["pass"];
 $db = substr($url["path"], 1);
 
 
-var_dump($_POST);
+
 echo("hola");
+$json_str = file_get_contents('php://input');
+
+# Get as an object
+$json_obj = json_decode($json_str);
+var_dump($json_obj);
 exit();
 $questionList = preg_replace('/[^a-zA-Z0-9]/', '', $_POST["questionList"]);
 
