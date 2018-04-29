@@ -19,6 +19,7 @@ $sql = "";
 
 $id_respondent = 1;
 foreach($questionList as $question){
+    echo("question");
     $questionIdClear = preg_replace('/[^a-zA-Z0-9]/', '',$question->id);
     $questionAnswer = preg_replace('/[^a-zA-Z0-9]/', '',$question->text);
     var_dump($questionIdClear);
