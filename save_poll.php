@@ -9,7 +9,8 @@ $db = substr($url["path"], 1);
 
 
 $questionList = preg_replace('/[^a-zA-Z0-9]/', '', $_POST["questionList"]);
-var_dump($questionList);
+exit(var_dump($questionList));
+
 $answer = preg_replace('/[^a-zA-Z0-9]/', '', $_POST["answer"]);
 $question_id = preg_replace('/[^a-zA-Z0-9]/', '', $_POST["question_id"]);
 $id_respondent = preg_replace('/[^a-zA-Z0-9]/', '', $_POST["id_respondent"]);
