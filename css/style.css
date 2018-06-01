@@ -1,0 +1,21 @@
+.logo{
+    display: inline-block;
+    font-size: initial;
+    height: 25px;
+    width: 40px;
+  }
+  .colum{
+    background: white;
+    display: inline-block;
+    height: 100%;
+    width: 20%;
+  }
+  .first.colum{
+    height: 75%;
+  }
+  .three.colum{
+    height: 66%;
+  }
+  .header-image{
+      margin: auto;
+  }
